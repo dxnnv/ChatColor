@@ -54,6 +54,8 @@ public class ChatColorPlaceholders extends PlaceholderExpansion {
         if (cPlayer == null) return "";
 
         return switch (identifier) {
+            case "pattern" -> cPlayer.getPattern() == null ? "" : cPlayer.getPattern().getName(false);
+
             case "pattern_name" -> cPlayer.getPattern() == null ? "" : cPlayer.getPattern().getName(false);
 
             case "pattern_name_formatted" -> cPlayer.getPattern() == null ? "" : cPlayer.getPattern().getName(true);
@@ -75,6 +77,6 @@ public class ChatColorPlaceholders extends PlaceholderExpansion {
 
     @Override
     public @NotNull List<String> getPlaceholders() {
-        return List.of("%chatcolor_pattern_name%", "%chatcolor_pattern_name_formatted%", "%chatcolor_kyori_pattern%");
+        return List.of("%chatcolor_pattern%", "%chatcolor_pattern_name%", "%chatcolor_pattern_name_formatted%", "%chatcolor_kyori_pattern%");
     }
 }
