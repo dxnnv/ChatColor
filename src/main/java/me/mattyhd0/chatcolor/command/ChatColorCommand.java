@@ -254,7 +254,7 @@ public class ChatColorCommand implements CommandExecutor, TabCompleter {
                 } else {
                     player.sendMessage(
                             plugin.getConfigurationManager().getMessages().getMessage("commands.chatcolor.player-not-loaded", "%prefix% &cReconnect to the server. If issue persist, contact an administrator.")
-                                    .replaceAll("%player%", arg[1])
+                                    .replaceAll("%player%", arg[0])
                     );
                 }
             } else {
